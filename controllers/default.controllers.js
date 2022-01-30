@@ -8,7 +8,7 @@ async function getMainPage(req, res) {
   const [users] = await db.query(query);
   console.log(users);
 
-  res.render("main");
+  res.render("index");
 }
 
 async function addFamily(req, res) {
@@ -18,7 +18,7 @@ async function addFamily(req, res) {
   `, [data])
   console.log("added");
 
-  res.render("main");
+  res.render("index");
 }
 
 module.exports = {
