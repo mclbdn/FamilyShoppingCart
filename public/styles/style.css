@@ -142,3 +142,7 @@ body {
   background-color: var(--main-bg-color);
   height: 100vh;
 }
+
+html {
+  scroll-behavior: smooth;
+}
