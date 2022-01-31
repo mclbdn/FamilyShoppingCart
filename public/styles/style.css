@@ -132,10 +132,13 @@ table {
   --purple-color: #6a36ff;
   --pink-color: #f2b8ec;
   --dark-text-color: #2c3a59;
+  --medium-text-color: #818EAC;
+  --light-text-color: #BCC6DB;
 }
 
 body {
   font-family: "Heebo", sans-serif;
+  color: var(--dark-text-color);
   background-color: var(--main-bg-color);
   height: 100vh;
 }

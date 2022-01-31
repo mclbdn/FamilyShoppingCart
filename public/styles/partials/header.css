@@ -1,6 +1,6 @@
 .fa-shopping-basket {
   vertical-align: middle;
-  color: var(--purple-color);
+  color: var(--pink-color);
 }
 
 .logo .logo-text {
@@ -51,6 +51,10 @@ a:visited {
   background-color: var(--pink-color);
   border-radius: 5px;
   color: #fff;
+}
+
+.login-link:hover {
+  background-color: var(--purple-color);
 }
 
 .login-link:visited {
