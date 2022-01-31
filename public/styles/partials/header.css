@@ -1,0 +1,58 @@
+.fa-shopping-basket {
+  vertical-align: middle;
+  color: var(--purple-color);
+}
+
+.logo .logo-text {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  font-weight: bold;
+  color: var(--dark-text-color);
+}
+
+header {
+  width: 85%;
+  margin: 4rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header ul {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: inherit;
+  color: var(--dark-text-color);
+  cursor: pointer;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: var(--dark-text-color);
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  padding-bottom: 1px;
+  background: linear-gradient(to left, var(--pink-color), var(--purple-color));
+  background-size: 100% 2px;
+  background-position: bottom 0 left 0, bottom 5px left 0;
+  background-repeat: no-repeat;
+}
+
+.login-link {
+  padding: 5px 10px;
+  background-color: var(--pink-color);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.login-link:visited {
+  color: #fff;
+}
