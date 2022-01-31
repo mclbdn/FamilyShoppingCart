@@ -1,7 +1,7 @@
 .company {
   background-color: var(--pink-color);
   color: #fff;
-  height: 100vh;
+  height: 900px;
   padding-top: 8rem;
 }
 
@@ -31,3 +31,13 @@
   object-fit: fill;
 }
 
+.personal-data-wrapper {
+  margin: 5rem auto;
+  width: 50%;
+  text-align: center;
+}
+
+.personal-data-wrapper img {
+  margin: 3rem auto;
+  /* width: 80%; */
+}
