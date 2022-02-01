@@ -2,7 +2,7 @@
   margin: 8rem auto;
   text-align: center;
   width: 50%;
-  height: 50vh;
+  height: 100%;
 }
 
 .hero h1 {
@@ -15,6 +15,7 @@
   max-width: 60%;
   margin: 1.5rem auto;
   color: var(--medium-text-color);
+  line-height: 2rem;
 }
 
 .hero button {
@@ -29,10 +30,28 @@
 }
 
 .hero button:hover {
-  background-color: var(--purple-color);
+  animation: turn-purple 0.2s linear forwards;
+}
+
+@keyframes turn-purple {
+  0% {
+  }
+  100% {
+    background-color: var(--purple-color);
+  }
 }
 
 .hero p:last-child {
-  font-weight:lighter;
+  font-weight: lighter;
   color: var(--light-text-color);
+}
+
+@media (max-width: 992px) {
+  .hero {
+    width: 85%;
+  }
+
+  .hero p {
+    max-width: 85%;
+  }
 }

@@ -39,11 +39,32 @@ a:visited {
 }
 
 .nav-link:hover {
-  padding-bottom: 1px;
-  background: linear-gradient(to left, var(--pink-color), var(--purple-color));
-  background-size: 100% 2px;
-  background-position: bottom 0 left 0, bottom 5px left 0;
-  background-repeat: no-repeat;
+  animation: bottom-border 0.2s linear forwards;
+}
+
+@keyframes bottom-border {
+  0% {
+    padding-bottom: 1px;
+    background: linear-gradient(
+      to left,
+      var(--pink-color),
+      var(--purple-color)
+    );
+    background-size: 0% 2px;
+    background-position: bottom 0 left 0, bottom 5px left 0;
+    background-repeat: no-repeat;
+  }
+  100% {
+    padding-bottom: 1px;
+    background: linear-gradient(
+      to left,
+      var(--pink-color),
+      var(--purple-color)
+    );
+    background-size: 100% 2px;
+    background-position: bottom 0 left 0, bottom 5px left 0;
+    background-repeat: no-repeat;
+  }
 }
 
 .login-link {
@@ -54,9 +75,34 @@ a:visited {
 }
 
 .login-link:hover {
-  background-color: var(--purple-color);
+  animation: turn-purple 0.2s linear forwards;
+}
+
+@keyframes turn-purple {
+  0% {
+
+  }
+  100% {
+    background-color: var(--purple-color);
+  }
 }
 
 .login-link:visited {
   color: #fff;
+}
+
+@media (max-width: 992px) {
+  header ul {
+    display: none;
+  }
+
+  header {
+    display: block;
+    margin: 4rem auto;
+    text-align: center;
+  }
+
+  .fa-shopping-basket {
+    display: block;
+  }
 }

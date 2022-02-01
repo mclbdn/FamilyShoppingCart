@@ -1,7 +1,7 @@
 .company {
   background-color: var(--pink-color);
   color: #fff;
-  height: 900px;
+  height: 100%;
   padding-top: 8rem;
 }
 
@@ -40,4 +40,19 @@
 .personal-data-wrapper img {
   margin: 3rem auto;
   /* width: 80%; */
+}
+
+@media (max-width: 992px) {
+    .company-wrapper {
+      width: 85%;
+      flex-direction: column;
+    }
+
+    .company-wrapper img {
+      margin-top: 3rem;
+    }
+
+    .personal-data-wrapper {
+      width: 85%;
+    }
 }
