@@ -1,0 +1,127 @@
+label,
+button {
+  display: block;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+label,
+input {
+  font-family: inherit;
+}
+
+input {
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+
+
+form p {
+  max-width: 60%;
+  margin: 1.5rem auto;
+  color: #fff;
+  line-height: 2rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+form {
+  border-radius: 25px;
+  padding: 1rem;
+  width: 80%;
+  max-width: 450px;
+  text-align: center;
+  margin: 3rem auto;
+  color: var(--light-text-color);
+  background-color: var(--purple-color);
+}
+
+form h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.login-link {
+  color: red;
+}
+
+form button {
+  margin: 1rem auto 0 auto;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  background-color: var(--pink-color);
+  padding: 15px 25px;
+  border-radius: 5px;
+}
+
+.fa-shopping-basket {
+  vertical-align: middle;
+}
+
+.logo .logo-text {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.logo {
+  background-image: linear-gradient(
+    to left,
+    var(--pink-color),
+    var(--purple-color)
+  );
+  background-clip: text;
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+a {
+  text-decoration: inherit;
+  color: var(--pink-color);
+  cursor: pointer;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: var(--pink-color);
+  cursor: pointer;
+}
+
+header {
+  margin: 4rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+form button:hover {
+  animation: turn-purple 0.2s linear forwards;
+}
+
+@keyframes turn-purple {
+  0% {
+  }
+  100% {
+    color: var(--dark-text-color);
+  }
+}
+
+@media (min-width: 992px) {
+  form {
+    width: 30%;
+  }
+}

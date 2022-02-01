@@ -1,5 +1,6 @@
 const express = require("express");
 const defaultRoutes = require("./routes/default.routes");
+const authenticationRoutes = require("./routes/authentication.routes");
 
 const path = require("path");
 
@@ -17,5 +18,6 @@ app.use(express.static("public"));
 
 // Set routes
 app.use(defaultRoutes);
+app.use(authenticationRoutes);
 
 app.listen(3000);

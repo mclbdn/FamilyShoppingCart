@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head", {title:"Register"}) %>
+  <link rel="stylesheet" href="styles/authentication/register.css" />
+</head>
+  <body>
+    <header>
+  <a href="/">
+    <div class="logo">
+      <span class="fas fa-shopping-basket fa-2x"></span>
+      <span class="logo-text">FamilyShoppingCart.</span>
+    </div>
+  </a>
+</header>
+<main>
+  <form action="">
+    <h1>Register</h1>
+    <label for="familyName">Family Name:</label>
+    <input type="text" name="familyName" id="familyName">
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="passwowrd">
+    <label for="repeatPassword">Repeat Password:</label>
+    <input type="password" name="repeatPassword" id="repeatPassword">
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email">
+    <button>Submit</button>
+    <p>Registered already? <a class="login-link" href="/login">Log In!</a></p>
+  </form>
+</main>
+  </body>
+</html>
