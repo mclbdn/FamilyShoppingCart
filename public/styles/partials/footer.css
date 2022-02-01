@@ -1,5 +1,11 @@
 footer {
-  height: 100px;
+  height: 50px;
   background-color: var(--purple-color);
   width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+footer p {
+  padding-top: 17px;
 }

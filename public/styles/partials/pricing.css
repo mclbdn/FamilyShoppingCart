@@ -49,6 +49,14 @@
   margin-bottom: 2rem;
 }
 
-@media (max-width: 992px) {
+.pricing-box button:hover {
+  animation: turn-purple 0.2s linear forwards;
+}
 
+@keyframes turn-purple {
+  0% {
+  }
+  100% {
+    color: var(--dark-text-color);
+  }
 }

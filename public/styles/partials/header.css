@@ -1,13 +1,26 @@
 .fa-shopping-basket {
   vertical-align: middle;
-  color: var(--pink-color);
 }
 
 .logo .logo-text {
   font-size: 1.5rem;
   vertical-align: middle;
   font-weight: bold;
-  color: var(--dark-text-color);
+}
+
+.logo {
+  background-image: linear-gradient(
+    to left,
+    var(--pink-color),
+    var(--purple-color)
+  );
+  background-clip: text;
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 header {
@@ -80,7 +93,6 @@ a:visited {
 
 @keyframes turn-purple {
   0% {
-
   }
   100% {
     background-color: var(--purple-color);
@@ -92,8 +104,14 @@ a:visited {
 }
 
 @media (max-width: 992px) {
-  header ul {
+  header ul li:not(:last-child) {
     display: none;
+  }
+
+  header ul li:last-child {
+    top: 1rem;
+    right: 1rem;
+    position: absolute;
   }
 
   header {
@@ -104,5 +122,9 @@ a:visited {
 
   .fa-shopping-basket {
     display: block;
+  }
+
+  .logo {
+    display: inline-block;
   }
 }
