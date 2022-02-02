@@ -145,3 +145,17 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.blob {
+  width: 35%;
+  position: absolute;
+  display: block;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+@media (max-width: 992px) {
+  .blob {
+    width: 50%;
+  }
+}

@@ -46,6 +46,11 @@
   color: var(--light-text-color);
 }
 
+.blob3 {
+  top: 30%;
+  left: 10%;
+}
+
 @media (max-width: 992px) {
   .hero {
     width: 85%;
@@ -54,4 +59,10 @@
   .hero p {
     max-width: 85%;
   }
+
+  .blob3 {
+    width: 50%;
+  }
 }
+
+

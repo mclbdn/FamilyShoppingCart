@@ -20,7 +20,6 @@ input {
 }
 
 
-
 form p {
   max-width: 60%;
   margin: 1.5rem auto;
@@ -39,7 +38,7 @@ form {
   max-width: 450px;
   text-align: center;
   margin: 3rem auto;
-  color: var(--light-text-color);
+  color: #fff;
   background-color: var(--purple-color);
 }
 
@@ -47,10 +46,7 @@ form h1 {
   font-weight: bold;
   font-size: 3rem;
   margin-bottom: 2rem;
-}
-
-.login-link {
-  color: red;
+  color: var(--light-text-color);
 }
 
 form button {
