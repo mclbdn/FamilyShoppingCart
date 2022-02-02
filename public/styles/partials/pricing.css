@@ -1,8 +1,10 @@
 .pricing {
-  margin: 8rem auto;
+  margin: 0 auto;
   text-align: center;
   width: 50%;
   height: 100%;
+  min-height: 650px;
+  padding-top: 8rem;
 }
 
 .pricing-wrapper {
