@@ -1,5 +1,6 @@
 <%- include("../partials/head", {title:"Login"}) %>
 <link rel="stylesheet" href="styles/authentication/login.css">
+<script src="scripts/auth-styles.js" defer></script>
 </head>
   <body>
     <header>
@@ -11,17 +12,24 @@
   </a>
 </header>
 <main>
+  <h1>Welcome Back!</h1>
   <form action="">
-    <h1>Login</h1>
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email">
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="passwowrd">
-    <button>Submit</button>
-    <p>Not registered yet? <a class="login-text" href="/register">Register!</a></p>
+    <div class="input-container">
+      <input type="text" name="email" id="email">
+      <label for="email">E-mail</label>
+      <div class="border-1"></div>
+    </div>
+    <div class="input-container">
+      <input type="password" name="password" id="password">
+      <label for="password">Password</label>
+      <div class="border-2"></div>
+    </div>
+    <div class="clear"></div>
+    <!-- <input type="submit" value="Log In"> -->
+    <button type="submit">Log In</button>
   </form>
   <img class="blob blob-1" src="images/blob2.svg" alt="">
-  <img class="blob blob-2" src="images/blob3.svg" alt="">
+  <img class="blob blob-2" src="images/blob3.svg" alt=""> 
 </main>
   </body>
 </html>

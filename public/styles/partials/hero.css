@@ -37,7 +37,7 @@
   0% {
   }
   100% {
-    background-color: var(--purple-color);
+    color: var(--purple-color);
   }
 }
 
