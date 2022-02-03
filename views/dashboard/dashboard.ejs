@@ -1,0 +1,20 @@
+<%- include("../partials/head", {title:"Dashboard"}) %>
+<link rel="stylesheet" href="styles/dashboard/dashboard.css">
+</head>
+  <body>
+    <header>
+  <a href="/">
+    <div class="logo">
+      <span class="fas fa-shopping-basket fa-2x"></span>
+      <span class="logo-text">FamilyShoppingCart.</span>
+    </div>
+  </a>
+</header>
+<main>
+  <p><%= inputData %></p>
+  <form action="/logout" method="post">
+    <button>Log Out</button>
+  </form>
+</main>
+  </body>
+</html>

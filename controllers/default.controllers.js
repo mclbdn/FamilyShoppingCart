@@ -1,6 +1,5 @@
 const db = require("../database/database");
 
-
 async function getMainPage(req, res) {
   res.render("index");
 }

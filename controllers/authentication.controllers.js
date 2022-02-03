@@ -19,10 +19,13 @@ function postLogin(req, res) {
       // Check if user has an account
       if (results.length >= 1) {
         // Check if passwords match
-        if (await bcrypt.compare(enteredPassword, results[0].password)) {
+        const currentUser = results[0];
+        if (await bcrypt.compare(enteredPassword, currentUser.password)) {
           // Password is correct
           console.log("Password is correct.");
-          res.render("index");
+          req.session.loggedIn = true;
+          req.session.familyName = currentUser.family_name;
+          res.redirect("/dashboard");
         } else {
           // Password is not correct
           inputData.hasError = true;
