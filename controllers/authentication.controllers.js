@@ -1,8 +1,9 @@
 const db = require("../database/database");
 const User = require("../models/User");
+const bcrypt = require("bcryptjs");
 
 function getRegister(req, res) {
-  res.render("authentication/register", {message:null});
+  res.render("authentication/register", { inputData: null });
 }
 
 function getLogin(req, res) {
@@ -15,18 +16,28 @@ function postRegister(req, res) {
   const password = req.body.password;
   const repeatPassword = req.body.repeatPassword;
 
+  let inputData = { hasError: false, message: "" };
+
   // Check if user already exists
-   db.query(
+  db.query(
     "SELECT * FROM users WHERE email = ?",
     [email],
-    function (err, results) {
+    async function (err, results) {
       if (results.length > 1) {
-        res.render("authentication/register", {message:"It exists"})
+        inputData.hasError = true;
+        inputData.message = "An user with this e-mail address already exists.";
+        res.render("authentication/register", { inputData: inputData });
       } else {
         if (password !== repeatPassword) {
-          res.render("authentication/register", { message: "Passwords do not match" });
+          inputData.hasError = true;
+          inputData.message = "Entered passwords to not match.";
+          res.render("authentication/register", {
+            inputData: inputData,
+          });
         } else {
-          const newUser = new User(familyName, password, email);
+          const hashedPassword = await bcrypt.hash(password, 12);
+          console.log(hashedPassword);
+          const newUser = new User(familyName, hashedPassword, email);
           newUser.save();
           res.redirect("/login");
         }
