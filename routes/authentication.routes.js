@@ -7,4 +7,6 @@ router.get("/register", authenticationControllers.getRegister);
 
 router.get("/login", authenticationControllers.getLogin);
 
+router.post("/register", authenticationControllers.postRegister)
+
 module.exports = router;
