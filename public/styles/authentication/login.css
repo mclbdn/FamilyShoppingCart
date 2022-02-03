@@ -156,3 +156,9 @@ main form button[type="submit"]:hover {
     color: var(--dark-text-color);
   }
 }
+
+.error-message{
+  text-align: center;
+  color: #cc0000;
+  padding-bottom: 20px;
+}

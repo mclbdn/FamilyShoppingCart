@@ -13,7 +13,14 @@
 </header>
 <main>
   <h1>Welcome Back!</h1>
-  <form action="">
+    <% if (inputData) { %>
+    <% if (inputData.hasError) { %>
+     <p class="error-message">
+       <%= inputData.message %>
+     </p>
+    <% } %>
+  <% } %>
+  <form action="/login" method="post">
     <div class="input-container">
       <input type="email" name="email" id="email" required>
       <label for="email">E-mail</label>
