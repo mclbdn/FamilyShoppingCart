@@ -3,7 +3,10 @@ const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 
 function getLogin(req, res) {
-  res.render("authentication/login", { inputData: null });
+  if (req.session.loggedIn === true) {
+    return res.redirect("/dashboard");
+  }
+  return res.render("authentication/login", { inputData: null });
 }
 
 function postLogin(req, res) {
@@ -72,6 +75,13 @@ function postRegister(req, res) {
           res.render("authentication/register", {
             inputData: inputData,
           });
+        } else if (password.length < 8 || password.length > 16) {
+          inputData.hasError = true;
+          inputData.message =
+            "Please enter a password that has betweeen 8 - 16 characters.";
+          res.render("authentication/register", {
+            inputData: inputData,
+          });
         } else {
           const hashedPassword = await bcrypt.hash(password, 12);
           console.log(hashedPassword);
@@ -87,7 +97,7 @@ function postRegister(req, res) {
 function postLogout(req, res) {
   req.session.loggedIn = false;
   req.session.familyName = null;
-  res.redirect("/");
+  return res.redirect("/");
 }
 
 module.exports = {

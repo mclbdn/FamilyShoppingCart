@@ -9,6 +9,8 @@
     <li class="nav-link"><a href="/">Home</a></li>
     <li class="nav-link"><a href="#company">Company</a></li>
     <li class="nav-link"><a href="#pricing">Pricing</a></li>
-    <li class="nav-link"><a class="login-link" href="/login">Login</a></li>
+    <% if (loggedIn === undefined || loggedIn === false) { %>
+      <li class="nav-link"><a class="login-link" href="/login">Login</a></li>
+    <% } %>
   </ul>
 </header>

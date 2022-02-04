@@ -1,14 +1,8 @@
-const db = require("../database/database");
-
 async function getMainPage(req, res) {
-  res.render("index");
-}
-
-async function addFamily(req, res) {
-  res.render("index");
+  const loggedIn = req.session.loggedIn;
+  res.render("index", { loggedIn: loggedIn });
 }
 
 module.exports = {
   getMainPage: getMainPage,
-  addFamily: addFamily,
 };
