@@ -13,7 +13,19 @@
 <main>
   <p><%= inputData %></p>
   <form action="/logout" method="post">
-    <button>Log Out</button>
+    <!-- <button>Log Out</button> -->
+    <a class="logout-link" onclick="this.parentNode.submit();">Log Out</a>
+  </form>
+  <form action="/dashboard" method="post">
+    <div>
+      <input type="text" id="item_name" name="item_name">
+      <label for="item_name">Item Name</label>
+    </div>
+    <div>
+      <input type="text" id="family_member_name" name="family_member_name">
+      <label for="family_member_name">Family Member Name</label>
+    </div>
+    <button>Submit</button>
   </form>
 </main>
   </body>

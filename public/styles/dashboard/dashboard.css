@@ -3,3 +3,32 @@ header {
   display: flex;
   justify-content: center;
 }
+
+form a {
+  top: 1rem;
+  right: 1rem;
+  position: absolute;
+}
+
+.logout-link {
+  padding: 5px 10px;
+  background-color: var(--pink-color);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.logout-link:hover {
+  animation: turn-purple 0.2s linear forwards;
+}
+
+@keyframes turn-purple {
+  0% {
+  }
+  100% {
+    background-color: var(--purple-color);
+  }
+}
+
+.logout-link:visited {
+  color: #fff;
+}

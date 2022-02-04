@@ -28,7 +28,8 @@ function postLogin(req, res) {
           console.log("Password is correct.");
           req.session.loggedIn = true;
           req.session.familyName = currentUser.family_name;
-          res.redirect("/dashboard");
+          req.session.userId = currentUser.id;
+          return res.redirect("/dashboard");
         } else {
           // Password is not correct
           inputData.hasError = true;
@@ -41,14 +42,14 @@ function postLogin(req, res) {
         // User with this e-mail doesn't exist
         inputData.hasError = true;
         inputData.message = "An user with this e-mail address doesn't exist.";
-        res.render("authentication/login", { inputData: inputData });
+        return r("authentication/login", { inputData: inputData });
       }
     }
   );
 }
 
 function getRegister(req, res) {
-  res.render("authentication/register", { inputData: null });
+  return res.render("authentication/register", { inputData: null });
 }
 
 function postRegister(req, res) {
@@ -67,19 +68,19 @@ function postRegister(req, res) {
       if (results.length > 1) {
         inputData.hasError = true;
         inputData.message = "An user with this e-mail address already exists.";
-        res.render("authentication/register", { inputData: inputData });
+        return res.render("authentication/register", { inputData: inputData });
       } else {
         if (password !== repeatPassword) {
           inputData.hasError = true;
           inputData.message = "Entered passwords to not match.";
-          res.render("authentication/register", {
+          return res.render("authentication/register", {
             inputData: inputData,
           });
         } else if (password.length < 8 || password.length > 16) {
           inputData.hasError = true;
           inputData.message =
             "Please enter a password that has betweeen 8 - 16 characters.";
-          res.render("authentication/register", {
+          return res.render("authentication/register", {
             inputData: inputData,
           });
         } else {
@@ -87,7 +88,7 @@ function postRegister(req, res) {
           console.log(hashedPassword);
           const newUser = new User(familyName, hashedPassword, email);
           newUser.save();
-          res.redirect("/login");
+          return res.redirect("/login");
         }
       }
     }
