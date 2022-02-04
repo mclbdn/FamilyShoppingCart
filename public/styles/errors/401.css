@@ -1,0 +1,52 @@
+main {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+h1 {
+  font-size: 20rem;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+main div {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  line-height: 2rem;
+}
+
+.login-link {
+  padding: 10px 15px;
+  background-color: var(--pink-color);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.login-link:hover {
+  animation: turn-purple 0.2s linear forwards;
+}
+
+@keyframes turn-purple {
+  0% {
+  }
+  100% {
+    background-color: var(--purple-color);
+  }
+}
+
+.login-link:visited {
+  color: #fff;
+}
+
+.blob-1 {
+  left: 0%;
+  top: 10%;
+}
+
+.blob-2 {
+  right: 0%;
+  top: 40%;
+}

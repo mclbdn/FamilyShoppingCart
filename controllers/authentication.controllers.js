@@ -84,9 +84,16 @@ function postRegister(req, res) {
   );
 }
 
+function postLogout(req, res) {
+  req.session.loggedIn = false;
+  req.session.familyName = null;
+  res.redirect("/");
+}
+
 module.exports = {
   getRegister: getRegister,
   getLogin: getLogin,
   postRegister: postRegister,
   postLogin: postLogin,
+  postLogout: postLogout,
 };

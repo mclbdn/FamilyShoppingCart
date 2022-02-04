@@ -1,5 +1,5 @@
 <%- include("../partials/head", {title:"Dashboard"}) %>
-<!-- <link rel="stylesheet" href="styles/dashboard/dashboard.css"> -->
+<link rel="stylesheet" href="styles/errors/401.css">
 </head>
   <body>
     <header>
@@ -11,7 +11,17 @@
   </a>
 </header>
 <main>
-  <p>401</p>
+  <h1>401</h1>
+  <h2>No authorization found.</h2>
+  <div>
+    <p>This page is not publicly available.</p>
+    <p>To access it, please, log in first.</p>
+  </div>
+  <a class="login-link" href="/login">
+    Log In
+  </a>
 </main>
+  <img class="blob blob-1" src="images/blob2.svg" alt="">
+  <img class="blob blob-2" src="images/blob3.svg" alt=""> 
   </body>
 </html>
