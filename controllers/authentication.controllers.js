@@ -4,9 +4,12 @@ const bcrypt = require("bcryptjs");
 
 // Login GET
 function getLogin(req, res) {
+  // User is already logged in -> he cannot log in again -> redirect him
   if (req.session.loggedIn === true) {
     return res.redirect("/dashboard");
   }
+
+  // User is not logged in -> let him log in
   return res.render("authentication/login", { inputData: null });
 }
 
@@ -27,23 +30,22 @@ function postLogin(req, res) {
         const currentUser = results[0];
         if (await bcrypt.compare(enteredPassword, currentUser.password)) {
           // Password is correct
-          console.log("Password is correct.");
           req.session.loggedIn = true;
-          req.session.familyName = currentUser.family_name;
           req.session.userId = currentUser.id;
+
           return res.redirect("/dashboard");
         } else {
           // Password is not correct
           inputData.hasError = true;
           inputData.message = "Entered password is not correct.";
-          res
-            .status(200)
-            .render("authentication/login", { inputData: inputData });
+
+          res.render("authentication/login", { inputData: inputData });
         }
       } else {
         // User with this e-mail doesn't exist
         inputData.hasError = true;
         inputData.message = "An user with this e-mail address doesn't exist.";
+
         return res.render("authentication/login", { inputData: inputData });
       }
     }
@@ -69,29 +71,39 @@ function postRegister(req, res) {
     "SELECT * FROM users WHERE email = ?",
     [email],
     async function (err, results) {
+      // User already does exist
       if (results.length > 1) {
         inputData.hasError = true;
         inputData.message = "An user with this e-mail address already exists.";
+
         return res.render("authentication/register", { inputData: inputData });
       } else {
+        // User does not exist but they typed not matching passwords
         if (password !== repeatPassword) {
           inputData.hasError = true;
           inputData.message = "Entered passwords to not match.";
+
           return res.render("authentication/register", {
             inputData: inputData,
           });
-        } else if (password.length < 8 || password.length > 16) {
+        }
+        // User does not exist but they typed short/long password
+        else if (password.length < 8 || password.length > 16) {
           inputData.hasError = true;
           inputData.message =
             "Please enter a password that has betweeen 8 - 16 characters.";
+
           return res.render("authentication/register", {
             inputData: inputData,
           });
-        } else {
+        }
+        // User does not exist thus we create them
+        else {
           const hashedPassword = await bcrypt.hash(password, 12);
-          console.log(hashedPassword);
           const newUser = new User(familyName, hashedPassword, email);
+
           newUser.save();
+
           return res.redirect("/login");
         }
       }

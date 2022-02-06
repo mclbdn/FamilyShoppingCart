@@ -36,8 +36,8 @@
 <div class="shopping-list">
   <h1>Shopping Cart Items</h1>
     <ol>
-      <% for( const item of inputData ) { %>
-        <li><%= item.item_name %> by: <%= item.family_member_name %></li>
+      <% for( const currentShoppingCartItem of currentShoppingCartItems ) { %>
+        <li><%= currentShoppingCartItem.item_name %> by: <%= currentShoppingCartItem.family_member_name %></li>
       <% } %>
     </ol>
   </div>

@@ -9,7 +9,7 @@ class ShoppingCart {
     this.userId = userId;
   }
 
-  save() {
+  addNewItemToShoppingList() {
     const sql =
       "INSERT INTO shopping_list (item_name, family_member_name, user_id) VALUES (?, ?, ?)";
     db.query(sql, [this.itemName, this.familyMemberName, this.userId]);
