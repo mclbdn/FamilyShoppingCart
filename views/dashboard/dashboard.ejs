@@ -1,5 +1,6 @@
 <%- include("../partials/head", {title:"Dashboard"}) %>
 <link rel="stylesheet" href="styles/dashboard/dashboard.css">
+<script src="/scripts/input-styles-script.js" defer></script>
 </head>
   <body>
     <header>
@@ -10,23 +11,36 @@
     </div>
   </a>
 </header>
-<main>
-  <p><%= inputData %></p>
+<div class="main-container">
+<div class="form-container">
   <form action="/logout" method="post">
-    <!-- <button>Log Out</button> -->
     <a class="logout-link" onclick="this.parentNode.submit();">Log Out</a>
   </form>
   <form action="/dashboard" method="post">
-    <div>
+    <h1>Add an item to the shopping cart.</h1>
+    <div class="input-container">
       <input type="text" id="item_name" name="item_name">
       <label for="item_name">Item Name</label>
+      <div class="border-1"></div>
     </div>
-    <div>
+    <div class="input-container">
       <input type="text" id="family_member_name" name="family_member_name">
       <label for="family_member_name">Family Member Name</label>
+      <div class="border-2"></div>
     </div>
-    <button>Submit</button>
+    <div class="clear"></div>
+    <button type="submit">Submit</button>
   </form>
-</main>
+  
+</div>
+<div class="shopping-list">
+  <h1>Shopping Cart Items</h1>
+    <ol>
+      <% for( const item of inputData ) { %>
+        <li><%= item.item_name %> by: <%= item.family_member_name %></li>
+      <% } %>
+    </ol>
+  </div>
+</div>
   </body>
 </html>

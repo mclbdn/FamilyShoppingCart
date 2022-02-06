@@ -1,10 +1,14 @@
 const ShoppingCart = require("../models/ShoppingCart");
 
-function getDashboard(req, res) {
+async function getDashboard(req, res) {
+  // If user is not logged in, prohibit access
   if (!req.session.loggedIn) {
     return res.status(401).render("errors/401");
   }
-  return res.render("dashboard/dashboard", { inputData: req.session.userId });
+
+  const currentShoppingCart = await ShoppingCart.showShoppingList(req.session.userId);
+  console.log(currentShoppingCart)
+  return res.render("dashboard/dashboard", { inputData: currentShoppingCart });
 }
 
 function postDashboard(req, res) {

@@ -2,6 +2,7 @@ const db = require("../database/database");
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 
+// Login GET
 function getLogin(req, res) {
   if (req.session.loggedIn === true) {
     return res.redirect("/dashboard");
@@ -9,6 +10,7 @@ function getLogin(req, res) {
   return res.render("authentication/login", { inputData: null });
 }
 
+// Login POST
 function postLogin(req, res) {
   const enteredEmail = req.body.email;
   const enteredPassword = req.body.password;
@@ -42,16 +44,18 @@ function postLogin(req, res) {
         // User with this e-mail doesn't exist
         inputData.hasError = true;
         inputData.message = "An user with this e-mail address doesn't exist.";
-        return r("authentication/login", { inputData: inputData });
+        return res.render("authentication/login", { inputData: inputData });
       }
     }
   );
 }
 
+// Register GET
 function getRegister(req, res) {
   return res.render("authentication/register", { inputData: null });
 }
 
+// Register POST
 function postRegister(req, res) {
   const familyName = req.body.familyName;
   const email = req.body.email;
@@ -95,6 +99,7 @@ function postRegister(req, res) {
   );
 }
 
+// Logout POST
 function postLogout(req, res) {
   req.session.loggedIn = false;
   req.session.familyName = null;
