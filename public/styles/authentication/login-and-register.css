@@ -1,25 +1,31 @@
-header {
-  margin: 4rem auto;
-  display: flex;
-  justify-content: center;
-}
-
-.blob-1 {
-  left: 0%;
-  top: 10%;
-}
-
-.blob-2 {
-  right: 0%;
-  top: 40%;
-}
-
 * {
   box-sizing: border-box;
 }
 
+.blob:nth-of-type(1) {
+  left: 0%;
+  top: 10%;
+}
+
+.blob:nth-of-type(2) {
+  right: 0%;
+  top: 40%;
+}
+
 .clear {
   clear: both;
+}
+
+.error-message {
+  text-align: center;
+  color: #cc0000;
+  padding-bottom: 20px;
+}
+
+header {
+  margin: 4rem auto;
+  display: flex;
+  justify-content: center;
 }
 
 main {
@@ -30,6 +36,66 @@ main {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+main .border-1,
+main .border-2 {
+  position: absolute;
+  height: 1px;
+  background-color: var(--pink-color);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+main .border-1::after,
+main .border-1::before,
+main .border-2::after,
+main .border-2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+main .border-1::after,
+main .border-2::after {
+  right: 50%;
+  background-color: #4cdffd;
+}
+
+main .border-1::before,
+main .border-2::before {
+  left: 50%;
+  background-color: #4cdffd;
+}
+
+main form button[type="submit"] {
+  background-color: var(--pink-color);
+  font-family: inherit;
+  font-size: 1rem;
+  display: block;
+  margin: 0 auto 20px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  padding: 15px 25px;
+  border-radius: 25px;
+}
+main form button[type="submit"]:focus {
+  outline: none;
+}
+main form button[type="submit"]:hover {
+  animation: change-to-dark-text-color 0.2s linear forwards;
 }
 
 main h1 {
@@ -85,40 +151,6 @@ main .input-container input:focus + label {
   transform: scale(0.8);
 }
 
-main .border-1,
-main .border-2 {
-  position: absolute;
-  height: 1px;
-  background-color: var(--pink-color);
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-main .border-1::after,
-main .border-1::before,
-main .border-2::after,
-main .border-2::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-}
-main .border-1::after,
-main .border-2::after {
-  right: 50%;
-  background-color: #4cdffd;
-}
-main .border-1::before,
-main .border-2::before {
-  left: 50%;
-  background-color: #4cdffd;
-}
 main .input-container input:focus ~ .border-1::after,
 main .input-container input:focus ~ .border-1::before,
 main .input-container input:focus ~ .border-2::after,
@@ -126,39 +158,10 @@ main .input-container input:focus ~ .border-2::before {
   width: 50%;
 }
 
-main form button[type="submit"] {
-  background-color: var(--pink-color);
-  font-family: inherit;
-  font-size: 1rem;
-  display: block;
-  margin: 0 auto 20px;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-  padding: 15px 25px;
-  border-radius: 25px;
-}
-main form button[type="submit"]:focus {
-  outline: none;
-}
-main form button[type="submit"]:hover {
-  animation: turn-purple 0.2s linear forwards;
-}
-
-@keyframes turn-purple {
+@keyframes change-to-dark-text-color {
   0% {
   }
   100% {
     color: var(--dark-text-color);
   }
-}
-
-.error-message{
-  text-align: center;
-  color: #cc0000;
-  padding-bottom: 20px;
 }

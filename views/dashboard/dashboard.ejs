@@ -37,7 +37,13 @@
   <h1>Shopping Cart Items</h1>
     <ol>
       <% for( const currentShoppingCartItem of currentShoppingCartItems ) { %>
-        <li><%= currentShoppingCartItem.item_name %> by: <%= currentShoppingCartItem.family_member_name %></li>
+        <li><%= currentShoppingCartItem.item_name %> by: <%= currentShoppingCartItem.family_member_name %>
+        <form action="/delete-item/<%= currentShoppingCartItem.id %>" method="post">
+          <button>
+            <i class="fas fa-trash"></i>
+          </button>
+        </form>
+        </li>
       <% } %>
     </ol>
   </div>

@@ -33,7 +33,18 @@ function postDashboard(req, res) {
   return res.redirect("/dashboard");
 }
 
+// Delete an item POST
+function postDeleteItem(req, res) {
+  const itemId = req.params.itemId;
+  const currentUserId = req.session.userId;
+
+  ShoppingCart.deleteItemFromShoppingCart(itemId, currentUserId);
+
+  return res.redirect("/dashboard");
+}
+
 module.exports = {
   getDashboard: getDashboard,
   postDashboard: postDashboard,
+  postDeleteItem: postDeleteItem,
 };

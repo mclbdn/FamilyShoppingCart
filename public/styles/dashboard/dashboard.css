@@ -33,8 +33,6 @@ form a {
   color: #fff;
 }
 
-/* New */
-
 .form-container {
   width: 400px;
   background-color: var(--purple-color);
@@ -201,6 +199,7 @@ form a {
 .shopping-list li {
   text-align: center;
   color: #fff;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 800px) {
