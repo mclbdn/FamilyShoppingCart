@@ -1,36 +1,33 @@
-header {
-  margin: 4rem auto;
-  display: flex;
-  justify-content: center;
+.delete-item-form {
+  display: inline-block;
+}
+
+.delete-item-form button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: var(--pink-color);
+}
+
+.delete-item-form button:hover {
+  background-image: linear-gradient(
+    to left,
+    var(--pink-color),
+    var(--purple-color)
+  );
+  background-clip: text;
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 form a {
   top: 1rem;
   right: 1rem;
   position: absolute;
-}
-
-.logout-link {
-  padding: 5px 10px;
-  background-color: var(--pink-color);
-  border-radius: 5px;
-  color: #fff;
-}
-
-.logout-link:hover {
-  animation: turn-purple 0.2s linear forwards;
-}
-
-@keyframes turn-purple {
-  0% {
-  }
-  100% {
-    background-color: var(--purple-color);
-  }
-}
-
-.logout-link:visited {
-  color: #fff;
 }
 
 .form-container {
@@ -157,6 +154,35 @@ form a {
 }
 .form-container form button[type="submit"]:hover {
   animation: turn-purple 0.2s linear forwards;
+}
+
+header {
+  margin: 4rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.logout-link {
+  padding: 5px 10px;
+  background-color: var(--pink-color);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.logout-link:hover {
+  animation: turn-purple 0.2s linear forwards;
+}
+
+@keyframes turn-purple {
+  0% {
+  }
+  100% {
+    background-color: var(--purple-color);
+  }
+}
+
+.logout-link:visited {
+  color: #fff;
 }
 
 @keyframes turn-purple {
