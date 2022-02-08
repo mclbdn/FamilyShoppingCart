@@ -8,7 +8,7 @@ const mysql = require("mysql2");
 //   database: "FamilyShoppingCart",
 // });
 
-const pool = mysql.createConnection({
+const pool = mysql.createPool({
   host: "us-cdbr-east-05.cleardb.net",
   user: "bf645f8296fd3c",
   password: "ca0432a7",
