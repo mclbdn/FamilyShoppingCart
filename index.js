@@ -40,9 +40,12 @@ app.use(function (req, res) {
   res.status(404).render("errors/404");
 });
 
-500
+500;
 app.use(function (error, req, res, next) {
   res.status(500).render("errors/500");
 });
 
-app.listen(3000);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on PORT: ${PORT}`);
+});
