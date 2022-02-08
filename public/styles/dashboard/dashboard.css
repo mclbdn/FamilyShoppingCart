@@ -10,18 +10,8 @@
 }
 
 .delete-item-form button:hover {
-  background-image: linear-gradient(
-    to left,
-    var(--pink-color),
-    var(--purple-color)
-  );
-  background-clip: text;
-  background-size: 100%;
-  background-repeat: repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+  cursor: pointer;
+  color: #4CDFFD;
 }
 
 form a {
