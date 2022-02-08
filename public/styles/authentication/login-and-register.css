@@ -119,7 +119,7 @@ main .input-container input {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 2rem;
+  height: 4rem;
   outline: none;
   color: var(--pink-color);
   font-size: 2rem;
