@@ -10,7 +10,9 @@ function getLogin(req, res) {
   }
 
   // User is not logged in -> let him log in
-  return res.render("authentication/login", { inputData: null });
+  return res.render("authentication/login", {
+    inputData: null
+  });
 }
 
 // Login POST

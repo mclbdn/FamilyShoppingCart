@@ -1,4 +1,4 @@
-<%- include("../partials/head", {title:"401 Error"}) %>
+<%- include("../partials/head", {title:"404 Error"}) %>
 <link rel="stylesheet" href="styles/errors/error-pages.css">
 </head>
   <body>
@@ -6,14 +6,13 @@
       <%- include("../partials/logo") %>
 </header>
 <main>
-  <h1>401</h1>
-  <h2>No authorization found.</h2>
+  <h1>404</h1>
+  <h2>Oops</h2>
   <div>
-    <p>This page is not publicly available.</p>
-    <p>To access it, please, log in first.</p>
+    <p>Page not found.</p>
   </div>
-  <a class="login-link" href="/login">
-    Log In
+  <a class="login-link" href="/">
+    Back To Home
   </a>
 </main>
   <img class="blob blob-1" src="images/blob2.svg" alt="">

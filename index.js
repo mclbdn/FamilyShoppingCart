@@ -34,4 +34,15 @@ app.use(defaultRoutes);
 app.use(authenticationRoutes);
 app.use(dashboardRoutes);
 
+// Handle errors
+// 404
+app.use(function (req, res) {
+  res.status(404).render("errors/404");
+});
+
+500
+app.use(function (error, req, res, next) {
+  res.status(500).render("errors/500");
+});
+
 app.listen(3000);
