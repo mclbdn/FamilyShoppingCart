@@ -401,8 +401,8 @@ header ul {
 .pricing {
   margin: 0 auto;
   text-align: center;
-  width: 50%;
   height: 100%;
+  width: 85%;
   min-height: 650px;
   padding-top: 8rem;
 }
@@ -527,3 +527,8 @@ footer p {
 }
 
 /* KEYFRAMES END */
+
+/* TEST */
+.fas {
+  display: inline;
+}
