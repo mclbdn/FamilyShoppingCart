@@ -15,3 +15,10 @@ Node.js & Express app using MySQL(ClearDB) and custom CSS.
 * Responsive CSS. I tested my CSS before in Chrome & Safari with different screen sizes and it worked perfectly, but when I tested the responsivity on my iPhone, the final result was much different, so I had to make a few changes in CSS. 
 * MVC. I wasn't used to build MVC apps since I was affraid of the amount of different files and directories. Anyway, now I can see that it makes things so much clearer and easier to understand since every file / directory has its own responsibility and when there's a problem with some part of the app, I know where to look for the problem.
 * Deployment itself. The fact that something works smoothly on my machine doesn't mean it will work deployed online.
+
+## Screenshots
+<img src="https://raw.githubusercontent.com/mclbdn/FamilyShoppingCart/main/Screenshot%202022-02-08%20at%2019.18.15.png" width="1000" height="700">
+<img src="https://raw.githubusercontent.com/mclbdn/FamilyShoppingCart/main/Screenshot%202022-02-08%20at%2019.18.35.png" width="1000" height="700">
+<img src="https://raw.githubusercontent.com/mclbdn/FamilyShoppingCart/main/Screenshot%202022-02-08%20at%2019.18.45.png" width="1000" height="700">
+<img src="https://raw.githubusercontent.com/mclbdn/FamilyShoppingCart/main/Screenshot%202022-02-08%20at%2019.18.55.png" width="1000" height="700">
+<img src="https://raw.githubusercontent.com/mclbdn/FamilyShoppingCart/main/Screenshot%202022-02-08%20at%2019.19.19.png" width="1000" height="700">
