@@ -13,3 +13,4 @@ Node.js & Express app using MySQL(ClearDB) and custom CSS.
 ## Challenges I faced
 * Deployment with ClearDB on Heroku was a bit of a hassle and I was receiving an error since MySQL server on ClearDB closed the connection. I solved this by using connection pooling.
 * Responsive CSS. I tested my CSS before in Chrome & Safari with different screen sizes and it worked perfectly, but when I tested the responsivity on my iPhone, the final result was much different, so I had to make a few changes in CSS. 
+* MVC. I wasn't used to build MVC apps since I was affraid of the amount of different files and directories. Anyway, now I can see that it makes things so much clearer and easier to understand since every file / directory has its own responsibility and when there's a problem with some part of the app, I know where to look for the problem.
