@@ -17,7 +17,7 @@ async function getDashboard(req, res) {
 }
 
 // Dashboard POST
-function postDashboard(req, res) {
+async function postDashboard(req, res) {
   const enteredItemName = req.body.item_name;
   const enteredFamilyMemberName = req.body.family_member_name;
   const currentUserId = req.session.userId;
@@ -28,17 +28,17 @@ function postDashboard(req, res) {
     currentUserId
   );
 
-  shoppingCart.addNewItemToShoppingList();
+  await shoppingCart.addNewItemToShoppingList();
 
   return res.redirect("/dashboard");
 }
 
 // Delete an item POST
-function postDeleteItem(req, res) {
+async function postDeleteItem(req, res) {
   const itemId = req.params.itemId;
   const currentUserId = req.session.userId;
 
-  ShoppingCart.deleteItemFromShoppingCart(itemId, currentUserId);
+  await ShoppingCart.deleteItemFromShoppingCart(itemId, currentUserId);
 
   return res.redirect("/dashboard");
 }

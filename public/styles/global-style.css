@@ -190,6 +190,10 @@ a:visited {
   vertical-align: middle;
 }
 
+.fas {
+  display: inline;
+}
+
 header {
   width: 85%;
   margin: 4rem auto;
@@ -485,6 +489,14 @@ footer {
   color: #fff;
 }
 
+footer a {
+  color: #fff;
+}
+
+footer a:visited {
+  color: #fff;
+}
+
 footer p {
   padding-top: 17px;
 }
@@ -527,8 +539,3 @@ footer p {
 }
 
 /* KEYFRAMES END */
-
-/* TEST */
-.fas {
-  display: inline;
-}

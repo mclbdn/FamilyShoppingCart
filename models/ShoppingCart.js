@@ -7,15 +7,15 @@ class ShoppingCart {
     this.userId = userId;
   }
 
-  addNewItemToShoppingList() {
+  async addNewItemToShoppingList() {
     const sql =
       "INSERT INTO shopping_list (item_name, family_member_name, user_id) VALUES (?, ?, ?)";
-    db.query(sql, [this.itemName, this.familyMemberName, this.userId]);
+    await db.promise().query(sql, [this.itemName, this.familyMemberName, this.userId]);
   }
 
-  static deleteItemFromShoppingCart(itemId, userId) {
+  static async deleteItemFromShoppingCart(itemId, userId) {
     const sql = "DELETE FROM shopping_list WHERE id = ? AND user_id = ?";
-    db.query(sql, [itemId, userId]);
+    await db.promise().query(sql, [itemId, userId]);
   }
 
   static async showShoppingList(userId) {
