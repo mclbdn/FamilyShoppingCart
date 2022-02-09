@@ -74,7 +74,7 @@ function postRegister(req, res) {
     [email],
     async function (err, results) {
       // User already does exist
-      if (results.length > 1) {
+      if (results.length >= 1) {
         inputData.hasError = true;
         inputData.message = "An user with this e-mail address already exists.";
 
