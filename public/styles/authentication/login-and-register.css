@@ -165,3 +165,4 @@ main .input-container input:focus ~ .border-2::before {
     color: var(--dark-text-color);
   }
 }
+
