@@ -2,7 +2,7 @@
 
 ### <a href="https://mclbdn-family-shopping-cart.herokuapp.com/">Try running this app here.</a>
 
-Node.js & Express app using MySQL(ClearDB) and custom CSS.
+Node.js & Express dynamic website using MySQL(ClearDB) and custom CSS.
 
 ## Features
 * Fully responsive UI
