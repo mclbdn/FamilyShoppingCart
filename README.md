@@ -9,6 +9,7 @@ Node.js & Express app using MySQL(ClearDB) and custom CSS.
 * Users are able to register / log in / log out (for this, I am using sessions)
 * Users are able to add & delete items from a shopping list
 * Hosted on Heroku
+* Functioning 401 / 404 / 500 error routes
 
 ## Challenges I faced
 * Deployment with ClearDB on Heroku was a bit of a hassle and I was receiving an error since MySQL server on ClearDB closed the connection. I solved this by using connection pooling.
